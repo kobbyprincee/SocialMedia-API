@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User,Post,Comment,Like
+from .models import Post,Comment,Like
 
 #Creaate Serializers Here
 

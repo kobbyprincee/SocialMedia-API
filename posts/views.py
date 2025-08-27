@@ -1,12 +1,13 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
+#Create views here
 from django.shortcuts import render
 from rest_framework import viewsets, permissions
 from .models import Post, Comment
 from .serializers import CommentSerializer, PostSerializer
 from rest_framework import filters
+# from django.shortcuts import get_object_or_404
+from .models import Post, Like
+from rest_framework import generics
+from notifications.models import Notification
 
 #  Classes to implementation feeds for post of this social media app.
 
@@ -53,10 +54,7 @@ class FeedView(APIView):
         ]
         return Response(feed_data)
     
-# from django.shortcuts import get_object_or_404
-from .models import Post, Like
-from rest_framework import generics
-from notifications.models import Notification
+
 
 class LikePostView(APIView):
     permission_classes = [IsAuthenticated]
