@@ -1,11 +1,10 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from .views import PostViewSet, CommentViewSet, FeedView, LikePostView, UnlikePostView, DeleteAccountView
+from .views import PostViewSet, CommentViewSet, FeedView, LikePostView, UnlikePostView
 
 router = DefaultRouter()
 router.register('posts', PostViewSet, basename='post')
 router.register('comments', CommentViewSet, basename='comment')
-router.register('delete-account', DeleteAccountView, basename='delete-account')
 
 
 urlpatterns = [

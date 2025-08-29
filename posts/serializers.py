@@ -10,20 +10,18 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'content', 'author', 'created_at', 'updated_at']
+        fields = ['id', 'content', 'media', 'author', 'created_at', 'updated_at']
 
 class CommentSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
-    post_title = serializers.ReadOnlyField(source='post.title')
 
     class Meta:
         model = Comment
-        fields = ['id', 'author', 'content', 'post', 'post_title', 'created_at', 'updated_at']
+        fields = ['id', 'author', 'content', 'post', 'created_at', 'updated_at']
 
 class LikeSerializer(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
-    post_title = serializers.ReadOnlyField(source='post.title')
+    user = serializers.ReadOnlyField(source='user.username')
 
     class Meta:
         model = Like
-        fields = ['id', 'author', 'post', 'post_title', 'created_at', 'updated_at']
+        fields = ['id', 'user', 'post', 'created_at']
