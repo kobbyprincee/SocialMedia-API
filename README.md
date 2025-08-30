@@ -42,7 +42,7 @@ A Django REST Framework-based social media API that allows users to create posts
    ```
 6. Run the server:
    ```bash
-   python manage.py runserver
+   socialmedia_api/socmedapi/bin/python manage.py runserver
    ```
 
 ## API Documentation
